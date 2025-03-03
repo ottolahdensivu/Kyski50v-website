@@ -1,0 +1,83 @@
+
+@font-face {
+    font-family: 'Academy';
+    src: url('fonts/Academy.woff2') format('woff2'),
+         url('fonts/Academy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+
+.logo h1 {
+    font-family: 'Academy', sans-serif;
+    font-size: 36px;
+    font-weight: normal; /* Ensures correct thickness */
+}
+
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0B6623;
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Header Section */
+header {
+    background: url('images/PHOTO-2024-02-01-10-20-01.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 150px 20px;
+    margin-top: 50px;
+    height: 100vh;
+}
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    text-align: center;
+    min-height: 100vh;
+}
+
+#info { background: #f4f4f4; }
+#liput { background: #ddd; }
+#ohjelma { background: #ccc; }
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
