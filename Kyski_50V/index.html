@@ -6,50 +6,212 @@
     <title>Kyski 50V - Annual Ball</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
+
+
+
+<script>
+    function togglePasswordBox(button) {
+        var ticketBox = button.parentElement;
+        var passwordContainer = ticketBox.querySelector(".password-container");
+        var errorMessage = ticketBox.querySelector(".error-message");
+        var inputField = ticketBox.querySelector(".ticket-password");
+
+
+
+        // Hide all other password boxes and error messages
+        document.querySelectorAll(".password-container").forEach(box => {
+            if (box !== passwordContainer) {
+                box.style.display = "none";
+            }
+        });
+
+        document.querySelectorAll(".error-message").forEach(msg => {
+            msg.style.display = "none";
+        });
+
+        document.querySelectorAll(".ticket-box").forEach(box => {
+            if (box !== ticketBox) {
+                box.classList.remove("expanded");
+                box.querySelector(".password-container").style.display = "none";
+                box.querySelector(".error-message").style.display = "none"; // ✅ Hides error message when another box is opened
+            }
+        });
+
+        // Toggle the clicked password box
+        if (passwordContainer.style.display === "none" || passwordContainer.style.display === "") {
+            passwordContainer.style.display = "flex";
+            ticketBox.classList.add("expanded"); // Expands only the clicked box
+            inputField.focus(); // Auto-focus on the input field
+        } else {
+            passwordContainer.style.display = "none";
+            ticketBox.classList.remove("expanded"); // Collapses when clicked again
+        }
+    }
+
+    function checkPassword(button) {
+        var ticketBox = button.parentElement.parentElement;
+        var input = ticketBox.querySelector(".ticket-password");
+        var errorMessage = ticketBox.querySelector(".error-message");
+        var correctPassword = "kyski50"; // Change this to your actual password
+
+        // Hide ALL error messages before checking
+        document.querySelectorAll(".error-message").forEach(msg => {
+            msg.style.display = "none";
+        });
+
+        if (input.value === correctPassword) {
+            window.location.href = "signup.html"; // Redirects to signup page
+        } else {
+            errorMessage.style.display = "block";
+        }
+    }
+
+    // Listen for "Enter" key press inside password input
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".ticket-password").forEach(input => {
+            input.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    event.preventDefault(); // Prevent form submission
+                    
+                    // Hide all other error messages when Enter is pressed
+                    document.querySelectorAll(".error-message").forEach(msg => {
+                        msg.style.display = "none";
+                    });
+
+                    this.parentElement.querySelector(".continue-button").click(); // ✅ Simulate button click
+                }
+            });
+        });
+    });
+</script>
+
+
+
+
+<script>
+    document.getElementById("home-toggle").addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default behavior
+        window.scrollTo({ top: 1, behavior: "smooth" }); // Scroll slightly below 0
+    });
+    </script>
+    
+
+
+
+
+
+
 <body>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="logo">
+<!-- Navigation Bar -->
+<nav>
+    <div class="nav-left">
+        <a href="#" class="logo">
             <h1>Kyski 50V</h1>
             <p>23.8.2025 | Cirkon Maneesi</p>
-        </div>
-        
-        <ul>
+        </a>
+    </div>
+
+    <div class="nav-center">
+        <ul class="nav-links">
             <li><a href="#info">Info</a></li>
             <li><a href="#liput">Liput</a></li>
             <li><a href="#ohjelma">Ohjelma</a></li>
-            <li class="language-toggle"><a href="index_en.html">🇬🇧</a> | 🇫🇮</li>
         </ul>
-    </nav>
+    </div>
+
+    <div class="nav-right">
+        <ul>
+            <li class="language-toggle">
+                <a href="index_en.html">EN</a></li>
+        </ul>
+    </div>
+</nav>
+
 
     <!-- Hero Section -->
     <header>
         
     </header>
 
-    <!-- Info Section -->
-    <section id="info">
+<!-- Info Section -->
+<section id="info">
+    <div class="info-container">
         <h2>Info</h2>
-        <p>Tietoa tapahtumasta...</p>
-    </section>
+        <p><strong>Arvon hiihtoheebot!</strong></p>
+        <p>
+            Meillä kaikilla on elokuussa syytä juhlaan, kun KY-Skin mittariin on kertymässä jo 50 ikävuotta eikä meno ainakaan ole hidastumassa.
+        </p>
+        <p>
+            Tällä hetkellä suunnitelma on se, että lauantaina 23.8.2025 Cirkon Maneesissa vietetään unohtumaton ilta parhaassa mahdollisessa seurassa.
+        </p>
+        <p>
+            Yritämme kerätä mahdollisimman paljon vanhojen kyskien yhteystietoja, jotta viralliset kutsut saadaan lähetettyä oikeaan paikkaan. Kutsut laitetaan vapun aikoihin tulemaan, koska se on otollisin aika muistella opiskeluaikoja ja lyödä lukkoon kesän paras tapahtuma.
+        </p>
+        <p><strong>KY-Ski</strong></p>
+    </div>
+</section>
 
-    <!-- Tickets Section -->
-    <section id="liput">
-        <h2>Liput</h2>
-        <p>Osta liput...</p>
-    </section>
+
+
+<!-- Tickets Section -->
+<section id="liput">
+    <h2>Liput</h2>
+    
+    <div class="tickets-container">
+        <div class="ticket-box">
+            <h3>Opiskelija</h3>
+            <p class="price">99€</p>
+            <button onclick="togglePasswordBox(this)" class="buy-button">Osta lippu</button>
+            <div class="password-container">
+                <input type="password" class="ticket-password" placeholder="Syötä salasana">
+                <button onclick="checkPassword(this)" class="continue-button">Jatka</button>
+            </div>
+            <p class="error-message">Väärä salasana!</p>
+        </div>
+
+        <div class="ticket-box">
+            <h3>Alumni</h3>
+            <p class="price">119€</p>
+            <button onclick="togglePasswordBox(this)" class="buy-button">Osta lippu</button>
+            <div class="password-container">
+                <input type="password" class="ticket-password" placeholder="Syötä salasana">
+                <button onclick="checkPassword(this)" class="continue-button">Jatka</button>
+            </div>
+            <p class="error-message">Väärä salasana!</p>
+        </div>
+
+        <div class="ticket-box">
+            <h3>Kannatuslippu</h3>
+            <p class="price">149€</p>
+            <button onclick="togglePasswordBox(this)" class="buy-button">Osta lippu</button>
+            <div class="password-container">
+                <input type="password" class="ticket-password" placeholder="Syötä salasana">
+                <button onclick="checkPassword(this)" class="continue-button">Jatka</button>
+            </div>
+            <p class="error-message">Väärä salasana!</p>
+        </div>
+    </div>
+</section>
+
+
+
+
 
     <!-- Program Section -->
     <section id="ohjelma">
         <h2>Ohjelma</h2>
-        <p>Tapahtuman aikataulu...</p>
+        <p>Ohjelma tarkentuu myöhemmin.</p>
     </section>
 
-    <!-- Footer -->
-    <footer>
+</body>
+</html>
+
+    <!-- Footer 
+     <footer>
         <p>Yhteystiedot | Yhteistyökumppanit</p>
     </footer>
-
+    -->
 </body>
 </html>
