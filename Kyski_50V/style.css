@@ -41,7 +41,15 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #0B6623;
+    background: linear-gradient(
+        to bottom,
+        #0B3D0B 0%,     /* dark green */
+        #0B3D0B 33.33%,
+        #B8860B 33.33%, /* muted golden yellow */
+        #B8860B 66.66%,
+        #8B0000 66.66%, /* dark red */
+        #8B0000 100%
+    );
     color: white;
     padding: 0px 20px;
     position: fixed;
@@ -119,13 +127,27 @@ nav {
 
 /* Header Section */
 header {
-    background: url('images/PHOTO-2024-02-01-10-20-01.jpg') no-repeat center center/cover;
+    background: url('Images/KySki Kitzbühel -77 (2).JPG') no-repeat center center/cover;
     color: white;
     text-align: center;
     padding: 50px 20px;
     margin-top: 50px;
     height: 90vh;
 }
+
+.logo-on-hero {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center exactly */
+    max-width: 50%;
+    height: auto;
+}
+
+
+
+
+
 
 /* Sections */
 section {
@@ -137,7 +159,7 @@ section {
 
 /* Info Section Styling */
 section#info {
-    background-image: url('Images/PHOTO-2024-02-07-23-04-34.jpg'); /* Ensure correct case */
+    background-image: url('Images/KySki Kitzbühel -77 (16).JPG'); /* Ensure correct case */
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -145,7 +167,7 @@ section#info {
     display: flex;
     justify-content: center;
     min-height: 500px; /* Ensures section is tall enough to show the image */
-    width: 100%;
+    
 }
 
 
@@ -170,10 +192,11 @@ section#info {
 }
 
 .info-container p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 5px 0; /* Reduce bottom margin */
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 10px 0;
 }
+
 
 
 
@@ -199,7 +222,7 @@ footer {
 /* Ticket Section */
 section#liput {
     text-align: center;
-    background-image: url('Images/PIZZA.jpg'); /* Ensure correct case */
+    background-image: url('Images/KySki Kitzbühel -77 (13).JPG'); /* Ensure correct case */
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -326,6 +349,22 @@ section#ohjelma {
     color: white;
     text-align: center;
     padding: 160px 20px;
+}
+
+.signup-title {
+    padding-top: 10px;
+}
+
+.signup-form {
+    padding-top: 150px; /* adjust if needed */
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)
+      ), url('Images/KySki Kitzbühel -77 .JPG'); /* replace with your filename */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 20px;
 }
 
 

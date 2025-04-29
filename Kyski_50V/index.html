@@ -9,7 +9,7 @@
 
 
 
-
+<!--
 <script>
     function togglePasswordBox(button) {
         var ticketBox = button.parentElement;
@@ -85,7 +85,7 @@
         });
     });
 </script>
-
+-->
 
 
 
@@ -121,18 +121,18 @@
         </ul>
     </div>
 
-    <div class="nav-right">
+   <!-- <div class="nav-right">
         <ul>
             <li class="language-toggle">
                 <a href="index_en.html">EN</a></li>
         </ul>
-    </div>
+    </div>-->
 </nav>
 
 
     <!-- Hero Section -->
-    <header>
-        
+    <header> 
+        <img src="Images/logo.png" alt="Kyski Logo" class="logo-on-hero">
     </header>
 
 <!-- Info Section -->
@@ -156,6 +156,7 @@
 
 
 <!-- Tickets Section -->
+<!-- Tickets Section -->
 <section id="liput">
     <h2>Liput</h2>
     
@@ -163,37 +164,28 @@
         <div class="ticket-box">
             <h3>Opiskelija</h3>
             <p class="price">99€</p>
-            <button onclick="togglePasswordBox(this)" class="buy-button">Osta lippu</button>
-            <div class="password-container">
-                <input type="password" class="ticket-password" placeholder="Syötä salasana">
-                <button onclick="checkPassword(this)" class="continue-button">Jatka</button>
-            </div>
-            <p class="error-message">Väärä salasana!</p>
+            <button onclick="redirectToSignup()" class="buy-button">Osta lippu</button>
         </div>
 
         <div class="ticket-box">
             <h3>Alumni</h3>
-            <p class="price">119€</p>
-            <button onclick="togglePasswordBox(this)" class="buy-button">Osta lippu</button>
-            <div class="password-container">
-                <input type="password" class="ticket-password" placeholder="Syötä salasana">
-                <button onclick="checkPassword(this)" class="continue-button">Jatka</button>
-            </div>
-            <p class="error-message">Väärä salasana!</p>
+            <p class="price">129€</p>
+            <button onclick="redirectToSignup()" class="buy-button">Osta lippu</button>
         </div>
 
         <div class="ticket-box">
             <h3>Kannatuslippu</h3>
             <p class="price">149€</p>
-            <button onclick="togglePasswordBox(this)" class="buy-button">Osta lippu</button>
-            <div class="password-container">
-                <input type="password" class="ticket-password" placeholder="Syötä salasana">
-                <button onclick="checkPassword(this)" class="continue-button">Jatka</button>
-            </div>
-            <p class="error-message">Väärä salasana!</p>
+            <button onclick="redirectToSignup()" class="buy-button">Osta lippu</button>
         </div>
     </div>
 </section>
+
+<script>
+function redirectToSignup() {
+    window.location.href = "signup.html"; // 🔥 Automatically redirects to signup page
+}
+</script>
 
 
 
