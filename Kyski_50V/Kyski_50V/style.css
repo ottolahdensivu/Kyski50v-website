@@ -1,0 +1,370 @@
+@font-face {
+    font-family: 'Academy';
+    src: url('fonts/Academy.woff2') format('woff2'),
+         url('fonts/Academy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background-color: #f8f8f8;
+}
+
+
+
+
+
+.logo {
+    text-decoration: none; /* Removes default underline */
+    color: white; /* Keeps text white */
+    cursor: pointer; /* Indicates it's clickable */
+    display: inline-block; /* Ensures it behaves like a button */
+}
+
+.logo h1 {
+    font-family: 'Academy', sans-serif;
+    font-size: 36px;
+    font-weight: normal; /* Ensures correct thickness */
+    margin-bottom: -20px;
+}
+
+
+
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(
+        to bottom,
+        #0B3D0B 0%,     /* dark green */
+        #0B3D0B 33.33%,
+        #B8860B 33.33%, /* muted golden yellow */
+        #B8860B 66.66%,
+        #8B0000 66.66%, /* dark red */
+        #8B0000 100%
+    );
+    color: white;
+    padding: 0px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    height: 10vh;
+}
+
+/* Left section (Logo) */
+.nav-left {
+    flex: 1; /* Pushes content toward center */
+}
+
+/* Center section (Navigation Links) */
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px; /* Adjust as needed to prevent it from going too far */
+}
+
+.nav-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.language-toggle a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Adjust size as needed */
+    height: 40px;
+    border: 2px solid black; /* Black border */
+    border-radius: 50%; /* Makes it a circle */
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.language-toggle a:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Header Section */
+header {
+    background: url('Images/KySki Kitzbühel -77 (2).JPG') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 50px;
+    height: 90vh;
+}
+
+.logo-on-hero {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center exactly */
+    max-width: 50%;
+    height: auto;
+}
+
+
+
+
+
+
+/* Sections */
+section {
+    padding: 60px 20px;
+    text-align: center;
+    min-height: 50vh;
+}
+
+
+/* Info Section Styling */
+section#info {
+    background-image: url('Images/KySki Kitzbühel -77 (16).JPG'); /* Ensure correct case */
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    padding: 150px 20px; /* Fixed padding */
+    display: flex;
+    justify-content: center;
+    min-height: 500px; /* Ensures section is tall enough to show the image */
+    
+}
+
+
+/* Adjusted info-container */
+.info-container {
+    max-width: 600px;
+    /*max-height: 200px;*/
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 20px; /* Reduced padding */
+    border-radius: 0px; /* Sharp edges */
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block; /* Shrink-wraps to text content */
+    width: auto; /* Ensures it only takes necessary space */
+}
+
+/* Reduce bottom spacing */
+.info-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.info-container p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin: 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+#info { background: #f4f4f4; }
+#liput { background: #ddd; }
+#ohjelma { background: #ccc; }
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Ticket Section */
+section#liput {
+    text-align: center;
+    background-image: url('Images/KySki Kitzbühel -77 (13).JPG'); /* Ensure correct case */
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    padding: 150px 20px;
+}
+
+.tickets-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    align-items: flex-start; /* Ensures ticket boxes are aligned at the top */
+}
+
+.ticket-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    position: relative; /* Keeps elements inside */
+    transition: all 0.3s ease-in-out; /* Smooth transition for expansion */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 180px; /* Prevents boxes from jumping */
+}
+
+/* Only the clicked ticket box expands */
+.ticket-box.expanded {
+    min-height: 240px;
+}
+
+/* Headings */
+.ticket-box h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.ticket-box .price {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Buy Button */
+.buy-button {
+    display: block;
+    background: black;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.buy-button:hover {
+    opacity: 0.8;
+}
+
+/* Password Box */
+.password-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.password-container input {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+/* Continue Button */
+.continue-button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.continue-button:hover {
+    opacity: 0.8;
+}
+
+/* Error Message */
+.error-message {
+    display: none;
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tickets-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ticket-box {
+        width: 90%;
+    }
+}
+
+
+
+/* Ohjelma Section */
+section#ohjelma {
+    background: url('Images/PHOTO-2024-12-02-09-49-05.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 160px 20px;
+}
+
+.signup-title {
+    padding-top: 10px;
+}
+
+.signup-form {
+    padding-top: 150px; /* adjust if needed */
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)
+      ), url('Images/KySki Kitzbühel -77 .JPG'); /* replace with your filename */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 20px;
+}
+
+
