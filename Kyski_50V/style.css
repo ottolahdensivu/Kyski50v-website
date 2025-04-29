@@ -127,7 +127,7 @@ nav {
 
 /* Header Section */
 header {
-    background: url('Images/KySki Kitzbühel -77 (2).JPG') no-repeat center center/cover;
+    background: url('Images/KySki_Kitzbühel_-77_(2).JPG') no-repeat center center/cover;
     color: white;
     text-align: center;
     padding: 50px 20px;
@@ -159,7 +159,7 @@ section {
 
 /* Info Section Styling */
 section#info {
-    background-image: url('Images/KySki Kitzbühel -77 (16).JPG'); /* Ensure correct case */
+    background-image: url('Images/KySki_Kitzbühel_-77_(16).JPG'); /* Ensure correct case */
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -222,7 +222,7 @@ footer {
 /* Ticket Section */
 section#liput {
     text-align: center;
-    background-image: url('Images/KySki Kitzbühel -77 (13).JPG'); /* Ensure correct case */
+    background-image: url('Images/KySki_Kitzbühel_-77_(13).JPG'); /* Ensure correct case */
     background-repeat: no-repeat;
     background-position: center top;
     background-size: cover;
@@ -360,7 +360,7 @@ section#ohjelma {
     background: linear-gradient(
         rgba(0, 0, 0, 0.4),
         rgba(0, 0, 0, 0.4)
-      ), url('Images/KySki Kitzbühel -77 .JPG'); /* replace with your filename */
+      ), url('Images/KySki_Kitzbühel_-77.JPG'); /* replace with your filename */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
